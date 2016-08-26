@@ -51,3 +51,10 @@ def fact_lu_piv(Mat,b):
         Mat[i][j] = Mat[i][j] - (Mat[i][k -1]  / Mat[k - 1][k -1])*Mat[k - 1][j]
   return [L,Mat]
 ###########################################################
+def solv_lu(L,U,b):
+  n = len(b)
+  #Y = [1/L[i][i] *(b[i] - sum([(L[i][j] * Y[j]) for j in range(i-1)]) for i in range(n)]
+  
+  Y = [1/L[i][i] * (b[i] - sum([(L[i][j] * Y[j]) for j in range(i-1)])) if L[i][i] != 0 else 0 for i in range(n)]
+  X = [1/U[i][i] * (b[i] - sum([(L[i][j] * Y[j]) for j in range(i+1,n)])) if U[i][i] != 0 else 0 for i in reversed(range(n))]
+  return X

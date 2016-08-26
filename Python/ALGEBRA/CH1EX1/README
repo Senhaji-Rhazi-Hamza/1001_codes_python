@@ -1,3 +1,27 @@
+#####################################################################
+
+The Shema is joined in the picture shema.png
+
+######################################################################
+The exercice is about circuit constructed by a repeated  mesh, we know as datas, the values of 
+the generator, and the resistances, the aim is to know the curent ik  in each mesh, 
+
+with applying node law and mesh law we obtain a linear system like that
+i0 = E/R
+{   
+ i0 - 4i1 + i2 = 0 L(k)
+
+
+ ik - 4ik+1 + ik+2 = 0 L(k)
+	 .
+	 .
+	 .
+		
+until last mesh wich has a diferent expression in-1 + 3in = 0
+}
+the analytic solution is solved by sequence of second order 
+ik = E/R* pow((2- sqrt(3)),k)
+the computational solution is solved by gauss algorithm presented below
 ######################################################################
 there are presented 2 method of solving linear problem
 
