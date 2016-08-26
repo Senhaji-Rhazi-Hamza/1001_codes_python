@@ -8,7 +8,10 @@ The exercice is about circuit constructed by a repeated  mesh, we know as datas,
 the generator, and the resistances, the aim is to know the curent ik  in each mesh, 
 
 with applying node law and mesh law we obtain a linear system like that
+
 i0 = E/R
+
+
 {   
  i0 - 4i1 + i2 = 0 L(k)
 
@@ -20,9 +23,11 @@ i0 = E/R
 		
 until last mesh wich has a diferent expression in-1 + 3in = 0
 }
+
+
 the analytic solution is solved by sequence of second order 
-ik = E/R* pow((2- sqrt(3)),k)
-the computational solution is solved by gauss algorithm presented below
+ik = E/R* (2- sqrt(3)^k
+the computational solution is solved by gauss algorithm
 ######################################################################
 there are presented 2 method of solving linear problem
 

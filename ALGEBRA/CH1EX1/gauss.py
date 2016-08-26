@@ -51,25 +51,3 @@ def gauss(Matt,bb):
       x[i] = 0
   return x
 ###################################################################################
-#assertion = False
-  #assert assertion, "erreur en entrée"
-  
-def gauss2(AA,b):
-  A = [[val for val in liste] for liste in AA]
-  n = len(A)
-  m = len(A[0])
-  X = []
-  for k in range(0,n-1):
-    for i in range(k+1,n):
-      m = A[i][k] / A[k][k]
-      for j in range(k,n):
-        A[i][j] = A[i][j] -m * A[k][j]
-      b[i]=b[i] - m * b[k]
-  X.append(b[n-1]/A[n-1][n-1])
-  for i in range(n-2,-1,-1):
-    s = 0
-    for k in range(i+1,n):
-      s+=A[i][k]*X[n-k-1]
-    X.append((b[i] - s) / A[i][i])
-  X.reverse()
-  return X 
