@@ -1,6 +1,7 @@
+#closed
 #####################################################################
 
-The Shema is joined in the picture shema.png
+The Shema is joined in the picture Resources/shema.jpg
 
 ######################################################################
 The exercice is about circuit constructed by a repeated  mesh, we know as datas, the values of 
@@ -30,6 +31,7 @@ gauss.py -->the method : elimination of gauss
 fact_lu.py--> factorization LU normal case and the case where the pivot
  is equal to are presented
 
-test.py --> test the functions implemented
+test.py --> use both of numerical solution and analytical one, then 
+compare them with a plot
 
 ######################################################################
