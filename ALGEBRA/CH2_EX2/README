@@ -1,0 +1,44 @@
+#open 
+#####################################################################
+
+in this exercice it is not pertinent to explain the physical phenomena.
+we are interested in knowing method of solving linear systems, so i will
+focus just on the methods which we will explain:
+      -Jacobi Method
+      -Gauss Seidel Method
+      -Gradient Method
+      -Gradient convergent method
+
+#####################################################################
+##1-Jacobi Method
+
+let imagine we have a system writen Ax = b 
+
+A : matrix belong to MnR symetric and Diagonal strict(means |aii| > sum(aij) with i!=j)
+X : Vector n dimension that we try to find
+b : vector known
+
+##Start solving
+
+so let decompose A = D - E - F
+
+D : Diagonal matrix
+E : Triangular inferior Matrix
+F : Triangular inferior Matrix
+
+so the new equation will be (D-E-F)x=b <=> Dx =(E+F)x + b
+                                       <=> x =D(-1)(E+F)x + D(-1)b
+                                       <=> x =(I - D(-1)A) x + D(-1)b
+                                       <=> x =B x + f
+
+with D(-1) is the inverse of D, B = (I - D(-1)A) and f = D(-1)b
+
+so the beautiful idea is to think that a sequence of vectors Un exist
+that     Verify Un+1 = B*Un + f and  that Un converge to the x we are 
+trying to find 
+
+we have a theorem who says that under
+some conditions Un converge to the x 
+
+we chose U0 for example(1,1.(n-3)times,1) and we iterate until Un+1 -Un tends to Epsilon
+close to 0 then our Un+1 is our x
