@@ -41,3 +41,35 @@ compare them with a plot
 
 ######################################################################
 Explanation of gauss method
+
+
+A : matrix belong to MnR 
+X : Vector n dimension that we try to find
+B : vector known
+
+system   Ax = B
+
+##Start solving
+
+the idea is to transform the system with linears combinations to obtain 
+another system Ux = C, this system have the same asolution as Ax=B
+but in this system U is a triangular matrix inferior or superior 
+we prefer to choose it superior here
+the system become something liket that 
+
+a11*x1 + a12*x2 + ........+ a1n*xn = c1
+       + a22*x2 + ........+ a2n*xn = c2
+                + ........+ a3n*xn = c3
+                     .
+                     .
+                     .
+                     .
+                     .
+                            ann*xn = cn
+
+
+it become easy to solve starting from solving xn
+
+xi = (ci - sum( aij * xj)) / aii   | from j = 1 to i - 1
+
+
