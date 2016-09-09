@@ -24,7 +24,7 @@ so let decompose A = D - E - F
 
 D : Diagonal matrix
 E : Triangular inferior Matrix
-F : Triangular inferior Matrix
+F : Triangular superior Matrix
 
 so the new equation will be (D-E-F)x=b <=> Dx =(E+F)x + b
                                        <=> x =D(-1)(E+F)x + D(-1)b
@@ -42,3 +42,34 @@ some conditions Un converge to the x
 
 we chose U0 for example(1,1.(n-3)times,1) and we iterate until Un+1 -Un tends to Epsilon
 close to 0 then our Un+1 is our x
+
+#####################################################################
+##2- Gauss Seidel Method
+
+this method is nearly as the same as jacobi method, we just choose diferent
+matrix to iterate the sequence.
+
+let imagine we have a system writen Ax = b 
+
+A : matrix belong to MnR defined positiv
+X : Vector n dimension that we try to find
+b : vector known
+
+##Start solving
+
+so let decompose A = D - E - F
+
+D : Diagonal matrix
+E : Triangular inferior Matrix
+F : Triangular superior Matrix
+
+we put P = D - E is also a triangular inferior matrix
+
+with P(-1) is the inverse of P,  B = P(-1)F and f = P(-1)b
+so the new equation will be (D-E-F)x=b <=>  (D - E)x = Fx + b
+                                       <=>       Px = Fx + b
+                                       <=>        x = P(-1)Fx + P(-1)b
+                                       <=>        x = B x + f
+
+we just need that A to be defined and positiv to have convergence
+
