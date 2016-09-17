@@ -73,3 +73,63 @@ so the new equation will be (D-E-F)x=b <=>  (D - E)x = Fx + b
 
 we just need that A to be defined and positiv to have convergence
 
+#####################################################################
+##3- Gradient Method
+
+Hold yourself Gradient method is caming
+
+Gradient method is easy to implement but difficult to understand, it was
+difficult from the book and wikipedia, i will try to explain the idea of 
+the theory and then i will just try to explain the algorithme, i  associate
+wikepdia links for more explanations https://fr.wikipedia.org/wiki/Algorithme_du_gradient
+
+############Theorical explanations###########
+
+if you don't hunderstand that part jump to algorithmic exmplanation
+ 
+A : matrix belong to MnR defined positiv and symetric
+X : Vector n dimension that we try to find
+b : vector known
+
+
+1-so we have a system Ax = b <=> Ax - b = 0
+
+2- we associate to that system a function from R^n to R which represent 
+the enrergy of the system, this function is E(x) = 1/2 x(T)Ax - x(T)b  | with x(T) means transposed of x
+
+that E(x) has a particularity tat grad(E(x)) = Ax - b, it's our system
+
+so a max level or minimum level of E will traduce E(x)' = 0 <=> E(x)' . dl = gard(E(x)) . dOM =0
+                                                            <=> grad(E(x))  = 0 
+---->dl = dx1 * dx2 * .. *dxn (those are scalars)
+---->dOM = dx1 + dx2 + .. +dxn (those are vectors)
+
+
+we imagine that each level of energy correspond to a curve for example an eleptycal one in 2 dimension x1, y1
+
+each level represent an energy or a potential, and whetever we are in a finit position in space we belong to a 
+level of energy, the idea is to go from the level that correspond to (x1,y1) to the level below that correspond
+to the level (x2,y2) until beeing in the minimul Level where we have grad(E(xmin,ymin)) = 0
+   
+so we in that process we will have the equation Xn+1 - Xn = - ak grad(E(Xn)) 
+we will iterate until grad(E(Xn)) --> 0                                       
+        _________________
+       /                 \
+      /                   \
+     /   _____________     \
+    /   /             \     \
+       /               \    \
+               .           
+   \   \               /   /
+    \   \_____________/   /
+     \                   /
+      \_________________/
+############Algorithmic explanations###########
+
+as in the previous method we have sequence that converge
+
+Un+1 - Un = - ak grad(E(Un))
+
+we put r = grad(E(Un) r the residu
+
+with ak have a specefic value ak = rk(T) * rk / rk(T) A r(k) 
