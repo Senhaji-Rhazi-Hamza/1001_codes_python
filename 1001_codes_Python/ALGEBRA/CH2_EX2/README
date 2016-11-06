@@ -85,7 +85,7 @@ wikepdia links for more explanations https://fr.wikipedia.org/wiki/Algorithme_du
 
 ############Theorical explanations###########
 
-if you don't hunderstand that part jump to algorithmic exmplanation
+if you don't hunderstand that part jump to algorithmic explanation
  
 A : matrix belong to MnR defined positiv and symetric
 X : Vector n dimension that we try to find
@@ -95,15 +95,26 @@ b : vector known
 1-so we have a system Ax = b <=> Ax - b = 0
 
 2- we associate to that system a function from R^n to R which represent 
-the enrergy of the system, this function is E(x) = 1/2 x(T)Ax - x(T)b  | with x(T) means transposed of x
+the "enrergy" of the system, this function is E(x) = 1/2 x(T)Ax - x(T)b  | with x(T) means transposed of x
 
 that E(x) has a particularity tat grad(E(x)) = Ax - b, it's our system
 
-so a max level or minimum level of E will traduce E(x)' = 0 <=> E(x)' . dl = gard(E(x)) . dOM =0
-                                                            <=> grad(E(x))  = 0 
----->dl = dx1 * dx2 * .. *dxn (those are scalars)
----->dOM = dx1 + dx2 + .. +dxn (those are vectors)
+3-solving the problem would be equivalent to MINIMIZE energy E(X), so :
 
+3.1-we will choose an arbitrary point int the space that we are working on
+3.2-we consider that that point belong to an hyperspace
+(means a space with a dimension less of space we are woring on)
+that hyperspace represent a constant level of energy, so if x belong to that 
+hyperspace => dE(x) = 0 /d() is diferential
+3.3-this hyperspace if we would draw it, we would use the equation dE(x) = <grad(E(x))|dOM>
+3.4-what grad(E(x)) gives as, is the local direction of how energy increase, so - grad(Ex)
+is the local direction of how energy decrease
+3.5- so we came up with the idea to jump for a level of energy, to another one, 
+from an hyperspace to another one, how contain less energy, until we rich E(x) = 0
+
+
+
+2D example
 
 we imagine that each level of energy correspond to a curve for example an eleptycal one in 2 dimension x1, y1
 
@@ -130,6 +141,27 @@ as in the previous method we have sequence that converge
 
 Un+1 - Un = - ak grad(E(Un))
 
-we put r = grad(E(Un) r the residu
+we put r = grad(E(Un) / r the residu
 
-with ak have a specefic value ak = rk(T) * rk / rk(T) A r(k) 
+with ak have a specefic value ak = rk(T) * rk / rk(T) A r(k)
+
+#####################################################################
+##4- Gradient_conjuge Method
+
+This method is a really beautiful evolution of the normal gradient method
+
+Ax = B could be decompose on a lienar system ai * ei = bi / ei are normal,ortogonals vectors
+ai belogn to R, bi composont i of B
+
+
+
+############Theorical explanations###########
+
+if you don't hunderstand that part jump to algorithmic explanation
+ 
+A : matrix belong to MnR defined positiv and symetric
+X : Vector n dimension that we try to find
+b : vector known
+
+
+1-so we have a system Ax = b <=> Ax - b = 0
