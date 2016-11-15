@@ -146,22 +146,20 @@ we put r = grad(E(Un) / r the residu
 with ak have a specefic value ak = rk(T) * rk / rk(T) A r(k)
 
 #####################################################################
-##4- Gradient_conjuge Method
+##4- conjugate_gradient Method
 
-This method is a really beautiful evolution of the normal gradient method
+This method is a really beautiful evolution of the normal gradient method.
+in wikipedia they give an idea of explanation and they give an algorithm
+that does not follow explanation,it is an optimized one, and its explanation
+is given in the link 1.
 
-Ax = B could be decompose on a lienar system ai * ei = bi / ei are normal,ortogonals vectors
-ai belogn to R, bi composont i of B
+i tried to implement the algorithm explained, but i didnt
+get the expected result so i gave up after several tries
 
+so we will just reimplement the algo given in wikipedia
 
 
 ############Theorical explanations###########
-
-if you don't hunderstand that part jump to algorithmic explanation
- 
-A : matrix belong to MnR defined positiv and symetric
-X : Vector n dimension that we try to find
-b : vector known
-
-
-1-so we have a system Ax = b <=> Ax - b = 0
+useful links:
+1-http://www.math.univ-montp2.fr/~di-pietro/ON/lecture9.pdf
+2-https://en.wikipedia.org/wiki/Conjugate_gradient_method
