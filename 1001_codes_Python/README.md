@@ -31,6 +31,9 @@ how to use those projects
 -each Readme of exercice start by "#open" to say that im still working on and i 
 havent finished or "#closed" to say that i have finished working on that project
 
+-because im writing on vim and sometimes i need mathematical notation that i d'ont 
+find, i will use for the exercices the notations specified in the files Notations.txt
+(that does not concern the exercices ALGEBREA--> CH1,CH2)
 ############################################################################################
 
 ###########################

@@ -11,4 +11,7 @@ EX2 : Soliving linear system with:
       -Gauss Seidel Method
       -Gradient Method
       -Gradient convergent method
+################################################
+EX3 : Diagonalize a linear system with: 
+      -Fact QR method
 
