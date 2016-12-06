@@ -1,3 +1,4 @@
+import numpy as np
 # L U Factorization Gauss
 def fact_lu(Mat,b):
   n = len(Mat)
@@ -21,15 +22,6 @@ def mat_permut(i,j,n):
   P[i], P[j] = P[j], P[i]
   return P
 ###########################################################
-def mat_mult(A,B):
-  n = len(A)  
-  m = len(B[0])
-  C = [[0 for i in range(n)] for j in range(m)]
-  for i in range(n):
-    for j in range(m):
-      for k in range(m):
-        C[i][j]+= A[i][k] * B[k][j]
-  return C
 ###########################################################
 def fact_lu_piv(Mat,b):
   n = len(Mat)
@@ -46,7 +38,7 @@ def fact_lu_piv(Mat,b):
             if (Mat[r + 1][r + 1] > Mat[r][r]):
               maxindex = r + 1
           P = mat_permut(k - 1,maxindex,n)
-          mat_mult(Mat,P)  
+          np.dot(Mat,P)  
         L[i][j] = Mat[i][k -1]  / Mat[k - 1][k -1]
         Mat[i][j] = Mat[i][j] - (Mat[i][k -1]  / Mat[k - 1][k -1])*Mat[k - 1][j]
   return [L,Mat]

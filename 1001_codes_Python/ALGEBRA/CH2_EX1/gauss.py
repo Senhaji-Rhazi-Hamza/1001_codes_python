@@ -1,13 +1,4 @@
-#################################################################################
-def mat_mult(A,B): #defining the multiply matrix
-  n = len(A)  
-  m = len(B[0])
-  C = [[0 for i in range(n)] for j in range(m)]
-  for i in range(n):
-    for j in range(m):
-      for k in range(m):
-        C[i][j]+= A[i][k] * B[k][j]
-  return C
+import numpy as np
 ##################################################################################
 def gauss(Matt,bb):
   n = len(Matt)
@@ -30,7 +21,7 @@ def gauss(Matt,bb):
     if (maxx != Mat[k-1][k-1]):
       perm_mat = [[int(i==j) for i in range(n)] for j in range(n)]
       perm_mat[k-1],perm_mat[index] = perm_mat[index],perm_mat[k-1]
-      Mat = mat_mult(perm_mat,Mat)
+      Mat = np.dot(perm_mat,Mat)
       b[k-1],b[index] = b[index],b[k-1]
 ###################################################################################
     if(maxx == 0) : continue #if you havent find any pivot != 0

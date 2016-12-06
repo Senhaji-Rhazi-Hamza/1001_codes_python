@@ -47,3 +47,10 @@ A[1][1] = 4
 
 #conjugate_gradient test
 print("conjugate_gradient result ",conjugate_gradient.conjugate_gradient(A,B),"\n")
+
+A = [[ (5 * int(i == j) | -2 * (i == j + 1) | -2 * (j == i + 1)) for i in range (n)] for j in range(n)]
+B = [ (i == n - 1) for i in range(n) ]
+A[n - 1][n - 1] = 3
+A[1][1] = 4
+############################Constructing matrix#####################################
+

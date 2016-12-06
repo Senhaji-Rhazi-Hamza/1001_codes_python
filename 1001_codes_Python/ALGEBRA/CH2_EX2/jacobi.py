@@ -10,20 +10,6 @@ def mat_add(A,B): #defining addition matrix
   return C
 ##################################################################################
 #################################################################################
-def mat_mult(A,B): #defining the multiply matrix
-  m = len(A)  
-  n = len(A[0])
-  n2 = len(B)
-  assert(n==n2),"impossible to multiply revise number of lines and coloumns" 
-  p = len(B[0])
-  C = [[0 for col in range(p)] for row in range(m)]
-  for i in range(m):
-    for j in range(p):
-      for k in range(n):
-        C[i][j]+= A[i][k] * B[k][j]
-  return C
-##################################################################################
-#################################################################################
 def jacobi(A,B): # Matrix A and vector B of Ax = B
   n = len(A)
   D = [ [A[i][j] if(i==j) else 0  for i in range(n) ] for j in range(n)]

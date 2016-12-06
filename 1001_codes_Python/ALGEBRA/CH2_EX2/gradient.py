@@ -5,7 +5,7 @@ def gradient(A,B):
   #Un0 = [1 for i in range(n)] #initialize start vec
   Un1 = [1 for i in range(n)]
   err = 10
-  tol = 10 ** -5
+  tol = 10 ** -8
   it = 0
   max_iter = 10000
   while ((err > tol) & (it < max_iter)):

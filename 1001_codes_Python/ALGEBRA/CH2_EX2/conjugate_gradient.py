@@ -6,7 +6,7 @@ def conjugate_gradient(A,B):
   r = (B - np.dot(A, Un1))
   pi1 = r
   err = 10
-  tol = 10 ** -5
+  tol = 10 ** -6
   it = 0
   max_iter = 10000
   while ((err > tol) & (it < n  )):
