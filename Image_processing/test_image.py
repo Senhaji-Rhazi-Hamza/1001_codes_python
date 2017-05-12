@@ -7,5 +7,5 @@ img = cv2.imread("ressources/cat.jpg",1)
 name = "ressources/cat.jpg"
 
 iobj = im.Image(name)
-iobj.show(5)
+iobj.show(3)
 
