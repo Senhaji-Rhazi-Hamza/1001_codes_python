@@ -1,0 +1,49 @@
+#####################################################################
+#####################################################################
+# factorisation QR
+
+## idea
+
+if A is a diagonalisable Matrix & MnR A could be decompose on
+a product A = Q R which Q is an orthogonal Matrix (means Q* Q = I)
+and r a Triangular Matrix superior (aij = 0 if i > j)
+
+#how we decompose
+
+it exist several ways to do that decomposition see the link in 
+wikipedia, but i prefered to choose the Gram shmidtz decomposition
+
+A =(û1,û2,....ûn)
+
+we rewrite that base on an orthogonal base (ê1,...ên)
+obtained by orthonormalising (û1,û2,....ûn) using gram shmidtz, when we rewrite
+A we obtain the matrix R which her coefficient aij = <ûi | ej>
+for the Q matrix is just (û1/norm(û1),........,ûn/norm(ûn))
+
+and that Product Q R gives A
+
+
+
+## iteration
+
+#idea 
+1-we have a theorem which say, that if A is semblable to T so T and A have the same 
+lymbdas  eigenvalues if T = Q * A Q and T is Triangular we just take the coefficients
+diagonals
+
+2- if A  have eigenvalues Lymi and |Lym1| > |Lym2| >...> |Lymn|
+we have a theorem which say if we choose the sequence Tk = Qk Rk and Tk+1 = Rk Qk
+Tk---> T where T is a triangular matrix and then we obtain T = Q* A Q, then we obtain
+Lymi
+
+# how to use it
+
+Tk  = Qk Rk, Tk+1 = Rk Qk => Tk+1 = Qk* Tk Qk
+
+so we start by T0 = A, factorise and get Q0, R0 we compute T1
+we iterate until the norm of ||Tk|| get close to ||A||
+#####################################################################
+
+
+
+
