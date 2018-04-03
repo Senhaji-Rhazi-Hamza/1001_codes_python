@@ -11,6 +11,10 @@ the algorithms
 * Gauss Seidel Method
 * Gradient Method
 * Gradient convergent method
+### Newton Method with lagrangien (Newto_lagrangien)
+ * Newton decent 
+ * lagrangien constraints added
+ * infeasable point handled
 ### Diagonalize a linear system with:(DIAG Directory)
 * Fact QR method
 
